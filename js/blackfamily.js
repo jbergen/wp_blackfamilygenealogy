@@ -32,6 +32,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var flkty = new Flickity('#featured-box', {
 		autoPlay: 5000,
+		pauseAutoPlayOnHover: true,
+		wrapAround: true,
+	});
+
+	var smallSlides = new Flickity('#site-slideshow', {
+		autoPlay: 2500,
 		pauseAutoPlayOnHover: false,
-	});	
+		wrapAround: true,
+		pageDots: false,
+	});
 }, false);

@@ -13,7 +13,6 @@ Template Name: Home
 
 			<div id="featured-box" class='span16'>
 				<?php
-				//$post_images = make_timthumb_image_array();
 					$image_names = array('0.jpg','1.jpg','2.jpg');
 					shuffle($image_names);
 				?>
@@ -48,11 +47,10 @@ Template Name: Home
 				<div class='col-4'>
 					<div id='site-slideshow' class='clearfix'>
 						<?php
-							//get images from the 'slideshow' page which is hidden by default
-							$ssimages = make_timthumb_image_array(1582);
-
+							// get images from the 'slideshow' page which is hidden by default
+							$ssimages = get_post_image_array(1582);
 							foreach($ssimages as $image) {
-								echo "<img class='thumbnail' src='".$image->timthumb."' width='300'/>";
+								echo "<img class='thumbnail' src='".$image->guid."' width='300'/>";
 							}
 							
 						?>

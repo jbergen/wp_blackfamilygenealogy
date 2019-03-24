@@ -5,7 +5,7 @@
 			<div class='container'>
 				
 				<div class='row'>
-					<div class='span-one-third'>
+					<div class='col'>
 						
 						<h4>Recently Updated</h4>
 						<?php hh_recently_updated_posts() ?>
@@ -19,7 +19,7 @@
 						
 					</div>
 
-					<div class='span-one-third'>
+					<div class='col'>
 						<h3>tags</h3>
 						<ul class='unstyled'>
 						<?php
@@ -43,10 +43,7 @@
 						</ul>
 					</div>
 
-					<div class='span-one-third'>
-
-
-
+					<div class='col'>
 						<h4>Ancestral Families</h4>
 						<ul class=''>
 							<?php wp_list_categories('child_of=124&title_li='); ?>
