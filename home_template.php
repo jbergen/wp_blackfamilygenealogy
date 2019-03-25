@@ -57,23 +57,6 @@ Template Name: Home
 					</div>
 				</div>
 			</div>
-			<div class='row'>
-				<div class='col-8'>
-					<h3>Updates</h3>
-					<?php
-						$args = array( 'post_type' => 'bfg-update', 'posts_per_page' => 1 );
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							echo '<h4><a href="'. get_permalink() .'">'. get_the_title() .'</a></h4>';
-							echo '<div class="entry-content">'. the_content() .'</div>';
-						endwhile;
-					?>
-				</div>
-				
-				
-			</div>
-			
 		</div><!-- content -->
 				
-		
 <?php get_footer() ?>

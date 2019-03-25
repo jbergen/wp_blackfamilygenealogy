@@ -171,8 +171,7 @@ FOOTER STYLE
 */
 
 
-#footer-wrapper
-{
+#footer-wrapper {
 	background:#444;
 	padding:30px 0;
 	position:absolute;
@@ -182,5 +181,25 @@ FOOTER STYLE
 	color: white;
 }
 
+.footer-title {
+	color: orange;
+}
+
+#footer-wrapper a:link,
+#footer-wrapper a:hover,
+#footer-wrapper a:visited,
+#footer-wrapper a:active {
+	color: white;
+	font-weight: 600;
+}
 
 #cntctfrm_contact_form>div{ margin: 5px 0; }
+
+.srpw-title {
+	color: white;
+    font-weight: 600;
+}
+
+.srpw-meta {
+	color: #ccc;
+}

@@ -24,6 +24,39 @@ function add_my_js() {
 add_action('wp_enqueue_scripts', 'add_my_js');
 
 
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function jlb_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'Footer Left Col',
+		'id'            => 'footer-left',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Center Col',
+		'id'            => 'footer-center',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Right Col',
+		'id'            => 'footer-right',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'jlb_widgets_init' );
 
 /*
 Gets all images associated with the post

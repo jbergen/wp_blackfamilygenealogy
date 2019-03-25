@@ -6,53 +6,31 @@
 				
 				<div class='row'>
 					<div class='col'>
-						
-						<h4>Recently Updated</h4>
-						<?php hh_recently_updated_posts() ?>
-							
-						<h4>Admin</h4>
-						<?php if (is_user_logged_in()):?>
-							<a href="<?php bloginfo('home') ?>/wp-admin/">dashboard</a> / <a href="<?php echo wp_logout_url(); ?>" title="logout">logout</a>
-					    <?php else: ?>
-							<a href="<?php echo wp_login_url(); ?>" title="Login">login</a>
-						<?php endif ?>
-						
+						<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+							<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+								<?php dynamic_sidebar( 'footer-left' ); ?>
+							</div><!-- #primary-sidebar -->
+						<?php endif; ?>
 					</div>
 
 					<div class='col'>
-						<h3>tags</h3>
-						<ul class='unstyled'>
-						<?php
-						//see: http://codex.wordpress.org/Function_Reference/wp_tag_cloud
-						$args = array(
-						    'smallest'                  => 12, 
-						    'largest'                   => 12,
-						    'unit'                      => 'pt', 
-						    'number'                    => 0,  
-						    'format'                    => 'flat',
-						    'orderby'                   => 'name', 
-						    'order'                     => 'ASC',
-						    'exclude'                   => null, 
-						    'include'                   => null, 
-						    'topic_count_text_callback' => default_topic_count_text,
-						    'link'                      => 'view', 
-						    'taxonomy'                  => 'post_tag', 
-						    'echo'                      => true ); 
-						wp_tag_cloud( $args ); 
-						?> 
-						</ul>
+						<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>
+							<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+								<?php dynamic_sidebar( 'footer-center' ); ?>
+							</div><!-- #primary-sidebar -->
+						<?php endif; ?>
 					</div>
 
 					<div class='col'>
-						<h4>Ancestral Families</h4>
+						<h2 class="footer-title">Ancestral Families</h2>
 						<ul class=''>
 							<?php wp_list_categories('child_of=124&title_li='); ?>
 						</ul>
-						<h4>Nobility Lines</h4>
+						<h2 class="footer-title">Nobility Lines</h2>
 						<ul class=''>
 							<?php wp_list_categories('child_of=123&title_li='); ?>
 						</ul>
-						<h4>William Y Black Family</h4>
+						<h2 class="footer-title">William Y Black Family</h2>
 						<ul class=''>
 							<?php wp_list_categories('child_of=125&title_li='); ?>
 						</ul>
@@ -91,6 +69,11 @@
 							<?php rewind_posts(); ?>
 						</select>
 						
+						<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+							<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+								<?php dynamic_sidebar( 'footer-right' ); ?>
+							</div><!-- #primary-sidebar -->
+						<?php endif; ?>
 					</div>
 				</div>
 				
