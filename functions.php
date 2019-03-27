@@ -55,8 +55,33 @@ function jlb_widgets_init() {
 		'before_title'  => '<h2 class="footer-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_nav_menu('header-menu',__( 'Header Menu' ));
 }
 add_action( 'widgets_init', 'jlb_widgets_init' );
+
+
+// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
+function clean_custom_menus() {
+	$menu_name = 'header-menu'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list = '<nav>';
+		$menu_list .= '<ul class="navbar-nav">';
+		foreach ((array) $menu_items as $key => $menu_item) {
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= '<li class="nav-item"><a href="'. $url .'" class="nav-link">'. $title .'</a></li>';
+		}
+		$menu_list .= '</ul>';
+		$menu_list .= '</nav>';
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
+}
 
 /*
 Gets all images associated with the post

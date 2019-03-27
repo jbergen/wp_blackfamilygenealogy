@@ -29,22 +29,7 @@ want to remain constant at the top of the page.
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<ul class="navbar-nav">
-					<?php
-						$args = array( 
-							'exclude' => "914,1582", 
-							'sort_column' => 'menu_order'
-						);
-						$pages = get_pages( $args );
-						foreach($pages as $post) {
-					?>
-						<li class="nav-item">
-							<a class="nav-link" href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $post->post_title; ?></a>
-						</li>
-					<?php
-						}
-					?>
-				</ul>
+				<?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
 				<form class='form-inline my-2 my-lg-0 ml-auto' method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
 					<input class="form-control mr-sm-2" type="text" placeholder='search' name="s" id="search-box" />
 					<input class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchsubmit" value="Go"/>
