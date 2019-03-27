@@ -19,7 +19,7 @@ Template Name: Home
 				
 				<?php rewind_posts(); ?>
 			  
-				<?php query_posts($query_string . '&cat=6'); ?>
+				<?php query_posts($query_string . '&cat=119'); ?>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					
 					<div class="post-slide carousel-cell" style='background-image:url("<?php echo bloginfo('url') ?>/wp-content/timthumb/timthumb.php?h=400&w=940&zc=1&src=<?php echo bloginfo('template_directory') ?>/images/headers/<?php echo $image_names[0] ?>")'>
