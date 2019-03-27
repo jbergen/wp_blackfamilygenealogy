@@ -30,25 +30,23 @@ body {
 	background-color: white;
 }
 
-.readable strong
-{
+h1 {
+	margin: 2em 0;
+	font-weight: 600;
+}
+
+.readable strong {
 	font-family:'Helvetica', sans-serif;
 }
 
-.readable p
-{
-	font-family: 'Times New Roman', serif;
-	font-size:16px;
-	line-height:21px;
+.readable p {
+	font-size: 18px;
 }
 
-.readable img
-{
-	box-shadow:3px 3px 6px #666;
+.readable img {
 }
 
-#front-page-cols
-{
+#front-page-cols {
 	min-height:300px;
 }
 
@@ -126,12 +124,15 @@ front page
 	
 */
 
-.post-meta
-{
-	font-size:10px;
-	font-weight:bold;
-	text-transform:uppercase;
-	margin-bottom:12px;
+.post {
+	font-size: 16px;
+	color: #666;
+	margin-bottom: 30px;
+}
+
+.post-meta {
+    font-weight: 500;
+	text-transform: uppercase;
 }
 
 #big-map
@@ -146,14 +147,16 @@ SIDEBAR
 
 */
 
-.sidebar .btn
-{
+.sidebar .btn {
 	text-align:center;
 	width:270px;
 }
 
-.side-map
-{
+.sidebar .sidebar-entry {
+	margin-bottom: 20px;
+}
+
+.side-map {
 	border-radius:6px;
 }
 

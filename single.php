@@ -5,11 +5,11 @@
 	<h1><?php the_title(); ?></h1>
 	<div class='row'>
 		
-		<div class="span-two-thirds readable">
+		<div class="col-8 readable">
 			<?php the_content() ?>
 		</div>
 
-		<div class="sidebar span-one-third">
+		<div class="col-4 sidebar">
 			<?php get_sidebar() ?>
 		</div>
 		
