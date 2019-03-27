@@ -3,31 +3,16 @@
 	$diedDate = get_post_meta($post->ID, "date_died_value", true);
 	$bornLoc = get_post_meta($post->ID, "born_value", true);
 	$diedLoc = get_post_meta($post->ID, "died_value", true);
-	if( $bornLoc )
-	{
+	if ($bornLoc) {
 		$bornLat = get_post_meta($post->ID, "lat_born_value", true);
 		$bornLng = get_post_meta($post->ID, "lng_born_value", true);
 	}
-	if( $diedLoc )
-	{
+	if ($diedLoc) {
 		$diedLat = get_post_meta($post->ID, "lat_died_value", true);
 		$diedLng = get_post_meta($post->ID, "lng_died_value", true);
 	}
 	
 ?>
-
-<!-- https://api.mapbox.com/v4/mapbox.high-contrast/-73.7638,42.6564,13/600x300@2x.png?access_token=pk.eyJ1IjoiamJlcmdlbiIsImEiOiJjanRxb3M1cW8wOG9pNGRzMDAxeWdmaGt1In0.cDp4jfISovgPug7djPRMiQ -->
-
-<?php if($bornLoc || $diedLoc): ?>
-	<?php
-		// echo "<img class='side-map' src='http://maps.googleapis.com/maps/api/staticmap?size=300x300&maptype=roadmap&";
-		// echo "<img class='side-map' src='https://api.mapbox.com/v4/mapbox.high-contrast/";
-		// if($bornLoc) echo "markers=color:green|label:B|". $bornLat .",". $bornLng ."&";
-		// if($diedLoc) echo "markers=color:red|label:D|". $diedLat .",". $diedLng ."&";
-		// if( $bornLoc && !$diedLoc || !$bornLoc && $diedLoc ) echo "zoom=6&";
-		// echo "sensor=false'>";
-	?>
-<?php endif ?>
 
 <div class="sidebar-entry">
 	<ul class='list-unstyled'>
@@ -43,10 +28,23 @@
 				$died_wiki_day = '<a target="blank" title="'. $died_date->format('j F') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $died_date->format('j_F') .'">'. $died_date->format('j M') .'</a>';
 			}
 
-			if( $bornDate || $bornLoc ) echo "<li><span class='badge badge-success'>born</span> ". $bornLoc ." ". $born_wiki_day ." ". $born_wiki_year ."</li>"; 
-			if( $diedDate || $diedLoc ) echo "<li><span class='badge badge-danger'>died</span> ". $diedLoc ." ". $died_wiki_day ." ". $died_wiki_year ."</li>"; 
-			echo "";
+			$mapToken = 'pk.eyJ1IjoiamJlcmdlbiIsImEiOiJjanRxb3d1NWgwaHBuM3lvMzJ3emtyNWY4In0.xCCZGVjZrBAKn5C_O6q8CA';
+			if ($bornLoc) {
+				$bornMapURL = 'https://api.mapbox.com/v4/mapbox.emerald/pin-l-b+008f00(' . $bornLng . ',' . $bornLat . ')/' . $bornLng . ',' . $bornLat . ',12/300x200@2x.png?access_token=' . $mapToken;
+				echo '<img src="' . $bornMapURL . '" height="200" width="300"/>';
+			}
+			if ( $bornDate || $bornLoc ) {
+				echo "<li><span class='badge badge-success'>born</span> ". $bornLoc ." ". $born_wiki_day ." ". $born_wiki_year ."</li>"; 
+				echo "</br>";
+			}
 
+			if ($diedLoc) {
+				$diedMapURL = 'https://api.mapbox.com/v4/mapbox.emerald/pin-l-d+dc3545(' . $diedLng . ',' . $diedLat . ')/' . $diedLng . ',' . $diedLat . ',12/300x200@2x.png?access_token=' . $mapToken;
+				echo '<img src="' . $diedMapURL . '" height="200" width="300"/>';
+			}
+			if ( $diedDate || $diedLoc ) {
+				echo "<li><span class='badge badge-danger'>died</span> ". $diedLoc ." ". $died_wiki_day ." ". $died_wiki_year ."</li>"; 
+			}
 		?>
 	</ul>
 </div>
