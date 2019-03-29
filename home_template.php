@@ -40,11 +40,11 @@ Template Name: Home
 			</div>
 		
 			<div id='front-page-cols' class='row'>
-				<div id="front-page-content" class='col-8'>
+				<div id="front-page-content" class='col-sm-8'>
 					<h3>Welcome!</h3>
 					<?php echo $page_content ?>
 				</div>
-				<div class='col-4'>
+				<div class='col-sm-4'>
 					<div id='site-slideshow' class='clearfix'>
 						<?php
 							// get images from the 'slideshow' page which is hidden by default

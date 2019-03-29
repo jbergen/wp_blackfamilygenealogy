@@ -5,7 +5,7 @@
 			<div class='container'>
 				
 				<div class='row'>
-					<div class='col'>
+					<div class='col-sm'>
 						<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
 							<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
 								<?php dynamic_sidebar( 'footer-left' ); ?>
@@ -13,7 +13,7 @@
 						<?php endif; ?>
 					</div>
 
-					<div class='col'>
+					<div class='col-sm'>
 						<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>
 							<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
 								<?php dynamic_sidebar( 'footer-center' ); ?>
@@ -21,7 +21,7 @@
 						<?php endif; ?>
 					</div>
 
-					<div class='col'>
+					<div class='col-sm'>
 						<h2 class="footer-title">Ancestral Families</h2>
 						<ul class=''>
 							<?php wp_list_categories('child_of=124&title_li='); ?>
