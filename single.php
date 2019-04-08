@@ -1,15 +1,15 @@
 <?php get_header() ?>
 <?php the_post() ?>
 
-<div class='span16 single-content'>
+<div class='container single-content'>
 	<h1><?php the_title(); ?></h1>
 	<div class='row'>
 		
-		<div class="span-two-thirds readable">
+		<div class="col-sm-9 readable">
 			<?php the_content() ?>
 		</div>
 
-		<div class="sidebar span-one-third">
+		<div class="col-sm-3 sidebar">
 			<?php get_sidebar() ?>
 		</div>
 		

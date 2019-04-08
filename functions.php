@@ -11,18 +11,73 @@ function add_my_js() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/assets/jquery/jquery-1.7.1.min.js');
 		wp_enqueue_script( 'jquery' );
-		//wp_enqueue_script('my_meta_js', MY_THEME_PATH . '/assets/jquery/jquery-ui-1.8.16.min.js'); 
 		
-		wp_enqueue_script('jquery-ui-custom', get_stylesheet_directory_uri() . '/assets/jquery/jquery-ui-1.8.16.min.js', array('jquery'), false, true);
 		wp_enqueue_script('blackfamily', get_stylesheet_directory_uri() . '/js/blackfamily.js', array('jquery'), false, true);
-		wp_enqueue_script('cycle', get_stylesheet_directory_uri() . '/js/cycle.js', array('jquery'), false, true);
-		//wp_enqueue_script('hashchange', get_stylesheet_directory_uri() . '/js/jquery.ba-hashchange.min.js', array('jquery'), false, true);
+		wp_enqueue_script('flickity', get_stylesheet_directory_uri() . '/js/flickity.min.js', false, false, true);
 	}
 	
 }
 add_action('wp_enqueue_scripts', 'add_my_js');
 
 
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function jlb_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'Footer Left Col',
+		'id'            => 'footer-left',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Center Col',
+		'id'            => 'footer-center',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Right Col',
+		'id'            => 'footer-right',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'widgets_init', 'jlb_widgets_init' );
+
+
+// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
+function clean_custom_menus() {
+	$menu_name = 'header-menu'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list = '<nav>';
+		$menu_list .= '<ul class="navbar-nav">';
+		foreach ((array) $menu_items as $key => $menu_item) {
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= '<li class="nav-item"><a href="'. $url .'" class="nav-link">'. $title .'</a></li>';
+		}
+		$menu_list .= '</ul>';
+		$menu_list .= '</nav>';
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
+}
 
 /*
 Gets all images associated with the post
