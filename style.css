@@ -95,7 +95,7 @@ front page
 
 .overlay-link .content
 {
-	padding:12px;
+	padding:20px;
 }
 
 .overlay-link p
@@ -113,9 +113,14 @@ front page
 	
 */
 
-.single-content
-{
+.single-content {
 	min-height:400px;
+}
+
+.single-content img,
+.single-content iframe,
+.single-content .wp-caption {
+	max-width: 100%;
 }
 
 /*
@@ -180,7 +185,7 @@ FOOTER STYLE
 	position:absolute;
 	left:0;
 	width:100%;
-	margin-top:10px;
+	margin-top:60px;
 	color: white;
 }
 
