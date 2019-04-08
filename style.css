@@ -15,6 +15,12 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .alignleft {float:left; margin:0 2em 2em 0}
 .aligncenter {display: block; margin-left: auto; margin-right: auto}
 
+.wp-caption-text {
+    font-style: italic;
+    margin: 1em 0;
+}
+
+
 
 .navbar {
 	background-color: white !important;
@@ -37,6 +43,11 @@ h1 {
 
 .readable strong {
 	font-family:'Helvetica', sans-serif;
+}
+
+.readable h2 {
+	margin: 60px 0 30px 0;
+    font-weight: 600;
 }
 
 .readable p {
@@ -123,6 +134,7 @@ front page
 .single-content iframe,
 .single-content .wp-caption {
 	max-width: 100%;
+	height: auto;
 }
 
 /*
