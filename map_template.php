@@ -15,7 +15,7 @@ Template Name: Map
 </div>
 </div>
 
-<script type="text/javascript" language="Javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDmBSTthgVOcDGME2lS3Bjm4Fk5ItecKuQ&sensor=false"></script>
+<script type="text/javascript" language="Javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBSTthgVOcDGME2lS3Bjm4Fk5ItecKuQ&sensor=false"></script>
 <script type="text/javascript" language="Javascript" src="<?php bloginfo('template_directory') ?>/js/underscore.js"></script>
 <script type="text/javascript" language="Javascript" >
 

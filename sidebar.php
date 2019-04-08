@@ -19,13 +19,13 @@
 		<?php
 			if($bornDate) {
 				$born_date = DateTime::createFromFormat('Y-m-d', $bornDate);
-				$born_wiki_year = '<a target="blank" title="'. $born_date->format('Y') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $born_date->format('Y') .'">'. $born_date->format('Y') .'</a>';
-				$born_wiki_day = '<a target="blank" title="'. $born_date->format('j F') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $born_date->format('j_F') .'">'. $born_date->format('j M') .'</a>';
+				$born_wiki_year = '<a target="blank" title="'. $born_date->format('Y') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $born_date->format('Y') .'">'. $born_date->format('Y') .'</a>';
+				$born_wiki_day = '<a target="blank" title="'. $born_date->format('j F') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $born_date->format('j_F') .'">'. $born_date->format('j M') .'</a>';
 			}
 			if($diedDate) {
 				$died_date = DateTime::createFromFormat('Y-m-d', $diedDate);
-				$died_wiki_year = '<a target="blank" title="'. $died_date->format('Y') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $died_date->format('Y') .'">'. $died_date->format('Y') .'</a>';
-				$died_wiki_day = '<a target="blank" title="'. $died_date->format('j F') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $died_date->format('j_F') .'">'. $died_date->format('j M') .'</a>';
+				$died_wiki_year = '<a target="blank" title="'. $died_date->format('Y') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $died_date->format('Y') .'">'. $died_date->format('Y') .'</a>';
+				$died_wiki_day = '<a target="blank" title="'. $died_date->format('j F') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $died_date->format('j_F') .'">'. $died_date->format('j M') .'</a>';
 			}
 
 			$mapToken = 'pk.eyJ1IjoiamJlcmdlbiIsImEiOiJjanRxb3d1NWgwaHBuM3lvMzJ3emtyNWY4In0.xCCZGVjZrBAKn5C_O6q8CA';

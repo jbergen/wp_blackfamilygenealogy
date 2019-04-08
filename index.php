@@ -61,7 +61,7 @@
 			<div  class="col-12">
 				<?php if($bornLoc || $diedLoc): ?>
 					<?php
-						echo "<img class='side-map' src='http://maps.googleapis.com/maps/api/staticmap?size=300x150&maptype=roadmap&";
+						echo "<img class='side-map' src='https://maps.googleapis.com/maps/api/staticmap?size=300x150&maptype=roadmap&";
 						if($bornLoc) echo "markers=color:green|label:B|". $bornLat .",". $bornLng ."&";
 						if($diedLoc) echo "markers=color:red|label:D|". $diedLat .",". $diedLng ."&";
 						if( ($bornLoc && !$diedLoc) || (!$bornLoc && $diedLoc) ) echo "zoom=6&";
@@ -74,13 +74,13 @@
 				<?php
 					if($bornDate) {
 						$born_date = DateTime::createFromFormat('Y-m-d', $bornDate);
-						$born_wiki_year = '<a target="blank" title="'. $born_date->format('Y') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $born_date->format('Y') .'">'. $born_date->format('Y') .'</a>';
-						$born_wiki_day = '<a target="blank" title="'. $born_date->format('j F') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $born_date->format('j_F') .'">'. $born_date->format('j M') .'</a>';
+						$born_wiki_year = '<a target="blank" title="'. $born_date->format('Y') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $born_date->format('Y') .'">'. $born_date->format('Y') .'</a>';
+						$born_wiki_day = '<a target="blank" title="'. $born_date->format('j F') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $born_date->format('j_F') .'">'. $born_date->format('j M') .'</a>';
 					}
 					if($diedDate) {
 						$died_date = DateTime::createFromFormat('Y-m-d', $diedDate);
-						$died_wiki_year = '<a target="blank" title="'. $died_date->format('Y') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $died_date->format('Y') .'">'. $died_date->format('Y') .'</a>';
-						$died_wiki_day = '<a target="blank" title="'. $died_date->format('j F') .' on Wikipedia" href="http://en.wikipedia.org/wiki/'. $died_date->format('j_F') .'">'. $died_date->format('j M') .'</a>';
+						$died_wiki_year = '<a target="blank" title="'. $died_date->format('Y') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $died_date->format('Y') .'">'. $died_date->format('Y') .'</a>';
+						$died_wiki_day = '<a target="blank" title="'. $died_date->format('j F') .' on Wikipedia" href="https://en.wikipedia.org/wiki/'. $died_date->format('j_F') .'">'. $died_date->format('j M') .'</a>';
 					}
 
 					if( $bornDate || $bornLoc ) echo "<li><span class='label success'>born</span> ". $bornLoc ." ". $born_wiki_day ." ". $born_wiki_year ."</li>"; 

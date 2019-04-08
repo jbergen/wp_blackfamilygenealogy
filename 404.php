@@ -13,7 +13,7 @@ description: Displayed when an invalid url is accessed
 		<strong>Apologies, but we were unable to find what you were looking for.</strong>
 	</div>
 	<a href='<?php bloginfo('url') ?>'>
-		<img class='span-one-third' src='http://blog.blackfamilygenealogy.org/wp-content/uploads/2010/12/Top-11-669x1024.jpg'>
+		<img class='span-one-third' src='https://blog.blackfamilygenealogy.org/wp-content/uploads/2010/12/Top-11-669x1024.jpg'>
 	</a>
 </div><!-- .row -->
 

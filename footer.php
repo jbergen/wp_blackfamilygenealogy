@@ -78,7 +78,7 @@
 				</div>
 				
 				
-				Theme created by <a href="http://www.josephbergen.com" target="blank">Joseph Bergen</a>
+				Theme created by <a href="https://www.josephbergen.com" target="blank">Joseph Bergen</a>
 			</div>
 		</div><!-- #footer -->
 

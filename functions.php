@@ -249,7 +249,7 @@ function my_meta_init() {
 	// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 	//wp_enqueue_script('my_jquery_js', MY_THEME_PATH . '/assets/jquery/jquery-1.6.1.min.js'); 
 	wp_enqueue_script('my_meta_js', MY_THEME_PATH . '/assets/jquery/jquery-ui.js'); 
-	wp_enqueue_script('my_map_js', 'http://maps.googleapis.com/maps/api/js?key=AIzaSyDmBSTthgVOcDGME2lS3Bjm4Fk5ItecKuQ&sensor=false');
+	wp_enqueue_script('my_map_js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBSTthgVOcDGME2lS3Bjm4Fk5ItecKuQ&sensor=false');
 	wp_enqueue_script('my_admin_js', MY_THEME_PATH . '/js/admin.js');
 	wp_enqueue_style('my_datepicker_css', MY_THEME_PATH . '/assets/css/ui-lightness/jquery-ui-1.8.16.custom.css');
 }
