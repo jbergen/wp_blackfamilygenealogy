@@ -64,6 +64,7 @@ front page
 
 .post-slide {
 	background:#eee;
+	background-size: cover;
 	height:100%;
 	width:100%;
 }
