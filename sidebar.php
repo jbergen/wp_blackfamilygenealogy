@@ -31,7 +31,7 @@
 			$mapToken = 'pk.eyJ1IjoiamJlcmdlbiIsImEiOiJjanRxb3d1NWgwaHBuM3lvMzJ3emtyNWY4In0.xCCZGVjZrBAKn5C_O6q8CA';
 			if ($bornLoc) {
 				$bornMapURL = 'https://api.mapbox.com/v4/mapbox.emerald/pin-l-b+008f00(' . $bornLng . ',' . $bornLat . ')/' . $bornLng . ',' . $bornLat . ',12/300x200@2x.png?access_token=' . $mapToken;
-				echo '<img src="' . $bornMapURL . '" height="200" width="300"/>';
+				echo '<img src="' . $bornMapURL . '" height="auto" width="300"/>';
 			}
 			if ( $bornDate || $bornLoc ) {
 				echo "<li><span class='badge badge-success'>born</span> ". $bornLoc ." ". $born_wiki_day ." ". $born_wiki_year ."</li>"; 
@@ -40,7 +40,7 @@
 
 			if ($diedLoc) {
 				$diedMapURL = 'https://api.mapbox.com/v4/mapbox.emerald/pin-l-d+dc3545(' . $diedLng . ',' . $diedLat . ')/' . $diedLng . ',' . $diedLat . ',12/300x200@2x.png?access_token=' . $mapToken;
-				echo '<img src="' . $diedMapURL . '" height="200" width="300"/>';
+				echo '<img src="' . $diedMapURL . '" height="auto" width="300"/>';
 			}
 			if ( $diedDate || $diedLoc ) {
 				echo "<li><span class='badge badge-danger'>died</span> ". $diedLoc ." ". $died_wiki_day ." ". $died_wiki_year ."</li>"; 
