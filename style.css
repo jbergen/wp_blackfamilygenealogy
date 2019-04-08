@@ -8,11 +8,11 @@ AUTHOR URI:
 
 /* WORDPRESS SPECIFIC IMAGE FLOAT SYTLES */
 
-img.alignright {float:right; margin:0 0 1em 1em}
-img.alignleft {float:left; margin:0 1em 1em 0}
+img.alignright {float:right; margin:0 0 2em 2em}
+img.alignleft {float:left; margin:0 2em 2em 0}
 img.aligncenter {display: block; margin-left: auto; margin-right: auto}
-.alignright {float:right; }
-.alignleft {float:left; }
+.alignright {float:right; margin:0 0 2em 2em}
+.alignleft {float:left; margin:0 2em 2em 0}
 .aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 
@@ -41,6 +41,7 @@ h1 {
 
 .readable p {
 	font-size: 18px;
+	text-align: justify;
 }
 
 .readable img {
